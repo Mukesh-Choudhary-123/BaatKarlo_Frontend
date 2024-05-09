@@ -138,11 +138,7 @@ const Header = () => {
                 onClick={OpenNotification}
                 value={notificationCount}
               />
-              <IconBtn
-                title={"Call History"}
-                icon={<SettingsPhoneIcon />}
-                onClick={openCallHistroy}
-              />
+
               <IconBtn
                 title={"Logout"}
                 icon={<LogoutIcon />}
