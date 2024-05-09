@@ -293,7 +293,7 @@ const Chat = ({ chatId, user }) => {
                 </IconButton>
               </Tooltip> */}
 
-              <Tooltip title={"Video Call"}>
+              {/* <Tooltip title={"Video Call"}>
                 <IconButton
                   onClick={handleVideoCall}
                   sx={{
@@ -308,7 +308,7 @@ const Chat = ({ chatId, user }) => {
                 >
                   <DuoIcon />
                 </IconButton>
-              </Tooltip>
+              </Tooltip> */}
             </>
           ) : null}
         </Stack>

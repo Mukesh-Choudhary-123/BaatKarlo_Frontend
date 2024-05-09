@@ -49,8 +49,8 @@ function App() {
             >
               <Route path="/" element={<Home />} />
               <Route path="/chat/:chatId" element={<Chat />} />
-              <Route path="/voice" element={<Voice />} />
-              <Route path="/video" element={<Video />} />
+              {/* <Route path="/voice" element={<Voice />} />
+              <Route path="/video" element={<Video />} /> */}
               <Route path="/groups" element={<Groups />} />
             </Route>
             <Route
