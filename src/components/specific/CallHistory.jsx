@@ -43,7 +43,7 @@ const CallHistory = () => {
           <Skeleton />
         ) : (
           <>
-            {data.allRequest?.length > 0 ? (
+            {data?.allRequest?.length > 0 ? (
               data?.allRequest?.map(({ sender, _id }) => (
                 <NotificationItem
                   sender={sender}
