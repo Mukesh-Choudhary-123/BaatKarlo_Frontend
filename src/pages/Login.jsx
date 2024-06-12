@@ -51,6 +51,8 @@ const Login = () => {
       },
     };
     try {
+      console.log("User Name", username.value);
+      console.log("Password", password.value);
       const { data } = await axios.post(
         `${server}/api/v1/user/login`,
         {
@@ -59,6 +61,7 @@ const Login = () => {
         },
         config
       );
+      console.log(data);
       dispatch(userExists(data.user));
       toast.success(data.message, { id: toastId });
     } catch (error) {

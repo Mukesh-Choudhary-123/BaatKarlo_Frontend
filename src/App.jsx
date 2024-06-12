@@ -69,16 +69,6 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
-        {/* <Suspense fallback={<div>Loading...</div>}>
-          <Routes>
-            <Route path="/admin" element={<AdminLogin />} />
-            <Route path="/admin/dashboard" element={<Dashboard />} />
-            <Route path="/admin/user" element={<UserManagement />} />
-            <Route path="/admin/chats" element={<ChatManagement />} />
-            <Route path="/admin/messages" element={<MessageManagement />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense> */}
         <Toaster position="bottom-center" />
       </BrowserRouter>
     </>
