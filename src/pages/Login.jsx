@@ -12,7 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { VisuallyHiddenInput } from "../components/styles/styledComponents";
@@ -117,6 +117,62 @@ const Login = () => {
     }
   };
 
+  const [toastShown, setToastShown] = useState(false);
+  console.log(toastShown);
+
+  useEffect(() => {
+    const toastShownFlag = sessionStorage.getItem("toastShownFlag");
+    if (!toastShownFlag) {
+      toast.custom(
+        (t) => (
+          <div
+            style={{
+              backgroundColor: "whitesmoke",
+              color: "#000",
+              padding: "10px",
+              borderRadius: "4px",
+              maxWidth: "300px",
+              textAlign: "center",
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+              transform: t.visible ? "translateY(0)" : "translateY(-200%)",
+              opacity: t.visible ? 1 : 0,
+              transition: "all 0.5s ease-in-out",
+            }}
+          >
+            <h3 style={{ color: "black" }}>
+              Feel free to continue as a demo user 🥰
+            </h3>
+            <p style={{ color: "black" }}>
+              <span style={{ fontWeight: "bold" }}>Username:</span> demo
+            </p>
+            <p style={{ color: "black" }}>
+              <span style={{ fontWeight: "bold" }}>Password:</span> demo123
+            </p>
+            <button
+              onClick={() => toast.dismiss(t.id)}
+              style={{
+                marginTop: "10px",
+                padding: "5px 10px",
+                backgroundColor: "#007bff",
+                color: "#fff",
+                border: "none",
+                borderRadius: "4px",
+                cursor: "pointer",
+              }}
+            >
+              Dismiss
+            </button>
+          </div>
+        ),
+        {
+          duration: 5000, // Show for 5 seconds
+          position: "top-center", // Position of the toast
+        }
+      );
+      sessionStorage.setItem("toastShownFlag", "true");
+    }
+  }, []);
+
   return (
     <Box>
       {isLogin ? (
@@ -124,7 +180,9 @@ const Login = () => {
           component={"main"}
           maxWidth="xs"
           sx={{
-            height: "100vh",
+            // height: "100vh",
+            marginTop: "5rem",
+            marginBottom: "5rem",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -133,7 +191,7 @@ const Login = () => {
           <Paper
             elevation={9}
             sx={{
-              minHeight: "100vh",
+              // minHeight: "100vh",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
@@ -225,7 +283,9 @@ const Login = () => {
           component={"main"}
           maxWidth="xs"
           sx={{
-            minHeight: "100vh",
+            // minHeight: "100vh",
+            marginTop: "5rem",
+            marginBottom: "5rem",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
