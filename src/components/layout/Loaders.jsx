@@ -40,8 +40,9 @@ const LayoutLoader = () => {
             BaatKarlo
           </Typography>
           <Typography variant="h5" color={"lightgray"}>
-            Chat App....
+            Chat App
           </Typography>
+          <Typography variant="h6">Loading...</Typography>
         </Box>
       </Grid>
       <Grid

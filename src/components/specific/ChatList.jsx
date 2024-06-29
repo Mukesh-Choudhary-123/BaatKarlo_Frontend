@@ -1,5 +1,5 @@
 import React from "react";
-import { Stack } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import ChatItem from "../shared/ChatItem";
 
 //
@@ -28,6 +28,17 @@ const ChatList = ({
         "&::-webkit-scrollbar-thumb": { background: "#888" },
       }}
     >
+      <Typography
+        position={"sticky"}
+        fontSize={"1.3rem"}
+        fontWeight={"400"}
+        textAlign={"center"}
+        bgcolor={"lightgray"}
+        paddingTop={"1rem"}
+        paddingBottom={"1rem"}
+      >
+        All Chats
+      </Typography>
       {chats?.map((data, index) => {
         const { avatar, _id, name, groupChat, members } = data;
 
