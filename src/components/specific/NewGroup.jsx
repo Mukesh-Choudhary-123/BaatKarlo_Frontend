@@ -95,7 +95,7 @@ const NewGroup = () => {
           justifyContent={"space-between"}
         >
           <Button variant="text" color="error" onClick={closeHandler}>
-            Cancle
+            Cancel
           </Button>
           <Button
             variant="contained"
