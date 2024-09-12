@@ -48,37 +48,37 @@ function App() {
   ) : (
     <>
       <BrowserRouter>
-        <Suspense fallback={<LayoutLoader />}>
-          <Routes>
-            <Route
-              element={
-                <SocketProvider>
-                  <ProtectRoute user={user} />
-                </SocketProvider>
-              }
-            >
-              <Route path="/" element={<Home />} />
-              <Route path="/chat/:chatId" element={<Chat />} />
-              {/* <Route path="/voice" element={<Voice />} />
+        {/* <Suspense fallback={<LayoutLoader />}> */}
+        <Routes>
+          <Route
+            element={
+              <SocketProvider>
+                <ProtectRoute user={user} />
+              </SocketProvider>
+            }
+          >
+            <Route path="/" element={<Home />} />
+            <Route path="/chat/:chatId" element={<Chat />} />
+            {/* <Route path="/voice" element={<Voice />} />
               <Route path="/video" element={<Video />} /> */}
-              <Route path="/groups" element={<Groups />} />
-            </Route>
-            <Route
-              path="/login"
-              element={
-                <ProtectRoute user={!user} redirect="/">
-                  <Login />
-                </ProtectRoute>
-              }
-            />
-            <Route path="/admin" element={<AdminLogin />} />
-            <Route path="/admin/dashboard" element={<Dashboard />} />
-            <Route path="/admin/user" element={<UserManagement />} />
-            <Route path="/admin/chats" element={<ChatManagement />} />
-            <Route path="/admin/messages" element={<MessageManagement />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
+            <Route path="/groups" element={<Groups />} />
+          </Route>
+          <Route
+            path="/login"
+            element={
+              <ProtectRoute user={!user} redirect="/">
+                <Login />
+              </ProtectRoute>
+            }
+          />
+          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="/admin/user" element={<UserManagement />} />
+          <Route path="/admin/chats" element={<ChatManagement />} />
+          <Route path="/admin/messages" element={<MessageManagement />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        {/* </Suspense> */}
         <Toaster position="bottom-center" />
       </BrowserRouter>
     </>
